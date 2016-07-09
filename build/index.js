@@ -56,23 +56,23 @@
 
 	var _Hello2 = _interopRequireDefault(_Hello);
 
-	__webpack_require__(253);
+	__webpack_require__(255);
 
-	__webpack_require__(257);
+	__webpack_require__(259);
 
-	var _stroe = __webpack_require__(259);
+	var _stroe = __webpack_require__(261);
 
 	var _stroe2 = _interopRequireDefault(_stroe);
 
-	var _app = __webpack_require__(263);
+	var _app = __webpack_require__(265);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _appWorld = __webpack_require__(268);
+	var _appWorld = __webpack_require__(270);
 
 	var _appWorld2 = _interopRequireDefault(_appWorld);
 
-	var _router = __webpack_require__(271);
+	var _router = __webpack_require__(273);
 
 	var _router2 = _interopRequireDefault(_router);
 
@@ -28049,12 +28049,6 @@
 	    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 	}
 
-	//let store = lightStore();
-	//
-	//let unsubscribe = store.subscribe(() =>
-	//    console.log(store.getState())
-	//);
-
 	var hello = function (_Component) {
 	    _inherits(hello, _Component);
 
@@ -28066,17 +28060,6 @@
 
 	    _createClass(hello, [{
 	        key: 'render',
-
-	        //从组件的props属性中导入方法或变量
-	        //goBlue(){
-	        //    store.dispatch(changeBlue());
-	        //    $("#text").css("backgroundColor",store.getState().color);
-	        //},
-	        //goGreen(){
-	        //    store.dispatch(changeGreen());
-	        //    $("#text").css("backgroundColor",store.getState().color);
-	        //    alert(store.getState().data);
-	        //},
 	        value: function render() {
 	            var _props = this.props;
 	            var lookState = _props.lookState;
@@ -28085,7 +28068,7 @@
 	            var goBlack = _props.goBlack;
 	            var initCounter = _props.initCounter;
 
-	            return _react2.default.createElement('div', null, _react2.default.createElement('p', { id: 'text' }, '屠龙宝刀，点击就送!!'), _react2.default.createElement('img', { src: '../../1172135.png' }), _react2.default.createElement('img', { src: '../../Dota.ico' }), _react2.default.createElement('button', { onClick: function onClick() {
+	            return _react2.default.createElement('div', null, _react2.default.createElement('p', { id: 'text' }, '屠龙宝刀，点击就送!!'), _react2.default.createElement('img', { src: __webpack_require__(253) }), _react2.default.createElement('img', { src: __webpack_require__(254) }), '}', _react2.default.createElement('button', { onClick: function onClick() {
 	                    return goGreen("666");
 	                } }, '变绿'), ' /* 用这种function的方式传递参数*/', _react2.default.createElement('button', { onClick: goBlue }, '变蓝'), _react2.default.createElement('button', { onClick: goBlack }, '变黑'), _react2.default.createElement('button', { onClick: lookState }, '查看状态同时变绿'), 'Clicked: ', initCounter, ' times', _react2.default.createElement(_reactRouter.Link, { className: 'world', to: '/world' }, _react2.default.createElement('button', null, '召唤world组件！')), _react2.default.createElement('div', { id: 'contentWindow', onClick: this.handleClick }, this.props.children));
 	        }
@@ -28112,13 +28095,25 @@
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "img/8d41a880.1172135.png";
+
+/***/ },
+/* 254 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/x-icon;base64,AAABAAEAGBgAAAEAIACICQAAFgAAACgAAAAYAAAAMAAAAAEAIAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAe3t9AHNzdDR1dXaBdnZ3k3Z2d5N2dneTdXV2k3V1dpN1dXaTdnZ3k3Z2d5N2dneTdnZ3inR0dUlycnMDcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAamprKp2dnr7Hx8f+zs7P/87Ozv/Q0ND/3Nzd/93d3v/e3t7/0tLS/83Nzv/Ozs7/y8vL/6mpqtd0dHVGcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqVry8vfyjo6P/kJCR/5OTlP+RkZH/1NTU///////j4+P/m5uc/5mZmf+ampr/lZWV/8vLy/92dneJcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMDAwf+goKH/tra2/8DAwP+fn5//lJSU/+fn5/+hoaH/tra2/9jY2P/X19f/nJyd/87Oz/92dneTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMDAwf+goKH/tbW1/6+vr/+Pj5D/xsbG/7Cwsf+0tLT/2NjY/9ra2v/W1tb/nJyc/87Oz/92dneTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMHBwv+9vb3/mZmZ/5KSk//MzMz/wsLC/7Kys//Y2Nj/2tra/9LS0v+1tbX/ra2u/9XV1f91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCw//9/f3/xcXF/83Nzf/Pz8//mpqb/87Ozv/a2tr/xMTE/6Ghov++vr7/9PT0/97e3v91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCwv///////////9vb2/+bm5z/wsLD/9ra2v/AwMH/l5eY/8XFxf/4+Pj//////93d3v91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCwv//////7Ozs/6qqq/+7u7z/0dHR/7q6uv+kpKX/ubm6/6Kiov/d3d7//////93d3v91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCw//6+vr/tLS1/62trf/AwMD/np6f/7Gxsv/ExMT/lpaX/5aWlv+lpab/7e3u/97e3v91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCw//m5ub/iYmJ/6Wlpf+VlZX/t7e3/+zs7P/Ly8v/kJCR/5ubm/+FhYb/zMzN/97e3v91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqXMLCwv/y8vL/srKy/42Njf+8vLz/5+fn/+np6f/q6ur/ysrK/5CQkf+hoaL/5ubm/93d3f91dXaTcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAaWlqULm5ufX8/Pz/7e3t/93d3f/o6Oj/6urq/+np6f/p6en/6urq/9/f3//m5ub//Pz8/9HR0f50dHWAcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABycnMAamprHJSUlaC5ubn2wsLD/8LCwv/CwsL/wsLC/8LCwv/CwsL/wsLC/8LCwv/CwsL/vr6//J2dnr1zc3QxcnJzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa2tsAGtrbB1paWpQaWlqXGlpalxpaWpcaWlqXGlpalxpaWpcaWlqXGlpalxpaWpcaWlqVmpqaypsbG0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////APgAHwDwAB8A8AAfAPAAHwDwAB8A8AAfAPAAHwDwAB8A8AAfAPAAHwDwAB8A8AAfAPAAHwDwAB8A+AAfAP///wD///8A////AP///wA="
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(254);
+	var content = __webpack_require__(256);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(258)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28135,10 +28130,10 @@
 	}
 
 /***/ },
-/* 254 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(257)();
 	// imports
 
 
@@ -28149,7 +28144,7 @@
 
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports) {
 
 	/*
@@ -28205,7 +28200,7 @@
 
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -28457,16 +28452,16 @@
 
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(258);
+	var content = __webpack_require__(260);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(256)(content, {});
+	var update = __webpack_require__(258)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28483,10 +28478,10 @@
 	}
 
 /***/ },
-/* 258 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(255)();
+	exports = module.exports = __webpack_require__(257)();
 	// imports
 
 
@@ -28497,7 +28492,7 @@
 
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28509,11 +28504,11 @@
 
 	var _redux = __webpack_require__(239);
 
-	var _reduxThunk = __webpack_require__(260);
+	var _reduxThunk = __webpack_require__(262);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reducer = __webpack_require__(261);
+	var _reducer = __webpack_require__(263);
 
 	var _reducer2 = _interopRequireDefault(_reducer);
 
@@ -28546,7 +28541,7 @@
 	}
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28574,7 +28569,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28583,8 +28578,9 @@
 	    value: true
 	});
 	exports.default = changeColor;
+	exports.default = addText;
 
-	var _constant = __webpack_require__(262);
+	var _constant = __webpack_require__(264);
 
 	var initState = {
 	    initCounter: 0,
@@ -28610,29 +28606,36 @@
 	            return {
 	                initCounter: 2,
 	                color: 'blue',
-	                time: '7'
-	            };
-	        case _constant.CHANGE_BLACK:
-	            return {
-	                initCounter: 3,
-	                color: 'black',
 	                time: '7',
-	                data: "black"
+	                data: "blue"
 	            };
+	        default:
+	            return state;
+	    }
+	}
 
+	function addText() {
+	    var state = arguments.length <= 0 || arguments[0] === undefined ? initState : arguments[0];
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case _constant.CHANGE_BLACK:
+	            return Object.assign({}, state, {
+	                text: action.text
+	            });
 	        default:
 	            return state;
 	    }
 	}
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	var CHANGE_GREEN = exports.CHANGE_GREEN = 'CHANGE_GREEN';
 	var CHANGE_BLUE = exports.CHANGE_BLUE = 'CHANGE_BLUE';
@@ -28640,8 +28643,16 @@
 
 	var CHANGE_WORLD = exports.CHANGE_WORLD = 'CHANGE_WORLD';
 
+	var INIT_STATE = exports.INIT_STATE = {
+	    initCounter: 0,
+	    color: 'blue',
+	    time: '7', // 持续时间20ms
+	    data: "",
+	    text: ""
+	};
+
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28658,7 +28669,7 @@
 
 	var _Hello2 = _interopRequireDefault(_Hello);
 
-	var _actionIndex = __webpack_require__(264);
+	var _actionIndex = __webpack_require__(266);
 
 	var _actionIndex2 = _interopRequireDefault(_actionIndex);
 
@@ -28681,7 +28692,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Hello2.default);
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28690,11 +28701,11 @@
 	  value: true
 	});
 
-	var _action = __webpack_require__(265);
+	var _action = __webpack_require__(267);
 
 	var Actions = _interopRequireWildcard(_action);
 
-	var _actionBlack = __webpack_require__(267);
+	var _actionBlack = __webpack_require__(269);
 
 	var ActionBlack = _interopRequireWildcard(_actionBlack);
 
@@ -28713,7 +28724,7 @@
 	exports.default = Object.assign(Actions, ActionBlack); //合并多个action对象
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -28725,7 +28736,7 @@
 	exports.goBlue = goBlue;
 	exports.lookState = lookState;
 
-	var _constant = __webpack_require__(262);
+	var _constant = __webpack_require__(264);
 
 	var lights = _interopRequireWildcard(_constant);
 
@@ -28745,22 +28756,9 @@
 	    console.log("6");
 	    console.log(tet);
 	    console.log("7");
-	    var result = "666";
-	    //获取state对象中的initCounter属性值
-	    //$.ajax({
-	    //    type:'get',
-	    //    url:'/wantplus/action/user/userList',
-	    //    data:{limit:10,
-	    //        offset:0},
-	    //    dataType:'json',
-	    //    async : false,
-	    //    success:function(data){
-	    //        result = data.data
-	    //    }
-	    //})
 	    $("#text").css("backgroundColor", 'green');
 	    return { type: lights.CHANGE_GREEN,
-	        data: result };
+	        data: tet };
 	}
 	function goBlue() {
 	    $("#text").css("backgroundColor", 'blue');
@@ -28776,10 +28774,10 @@
 	        dispatch(goGreen());
 	    };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(266)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(268)))
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -38599,7 +38597,7 @@
 
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -38609,7 +38607,7 @@
 	});
 	exports.goBlack = goBlack;
 
-	var _constant = __webpack_require__(262);
+	var _constant = __webpack_require__(264);
 
 	var lights = _interopRequireWildcard(_constant);
 
@@ -38630,10 +38628,10 @@
 	    console.log("goBlack");
 	    return { type: lights.CHANGE_BLACK };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(266)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(268)))
 
 /***/ },
-/* 268 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38646,11 +38644,11 @@
 
 	var _reactRedux = __webpack_require__(232);
 
-	var _World = __webpack_require__(269);
+	var _World = __webpack_require__(271);
 
 	var _World2 = _interopRequireDefault(_World);
 
-	var _actionWorld = __webpack_require__(270);
+	var _actionWorld = __webpack_require__(272);
 
 	var ActionWorld = _interopRequireWildcard(_actionWorld);
 
@@ -38671,9 +38669,7 @@
 	}
 
 	function mapStateToProps(state) {
-	    return {
-	        initCounter: state.initCounter
-	    };
+	    return {};
 	}
 	//将action中的所有方法绑定到props上,这样组件就有了绑定的方法
 	function mapDispatchToProps(dispatch) {
@@ -38684,7 +38680,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_World2.default);
 
 /***/ },
-/* 269 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38755,7 +38751,7 @@
 	exports.default = World;
 
 /***/ },
-/* 270 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {"use strict";
@@ -38765,16 +38761,16 @@
 	});
 	exports.changeWorld = changeWorld;
 
-	var _constant = __webpack_require__(262);
+	var _constant = __webpack_require__(264);
 
 	function changeWorld() {
 	    $("#text").text("changeWorld");
 	    return { type: _constant.CHANGE_WORLD };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(266)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(268)))
 
 /***/ },
-/* 271 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38801,11 +38797,11 @@
 
 	var _reactDom = __webpack_require__(33);
 
-	var _app = __webpack_require__(263);
+	var _app = __webpack_require__(265);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _appWorld = __webpack_require__(268);
+	var _appWorld = __webpack_require__(270);
 
 	var _appWorld2 = _interopRequireDefault(_appWorld);
 
