@@ -28,7 +28,7 @@ class Meeting extends Component {
                 <p>meeting</p>
                 <input placeholder="roomNum"></input>
                 <div id="66666">
-                    <div id="66666b7c2835c0fc941e480664d982f9dd88a" class="video-item" data-stream-id="b7c2835c0fc941e480664d982f9dd88a" style="width:100px;height:100px"></div>
+                    <div id="66666b7c2835c0fc941e480664d982f9dd88a" className="video-item" data-stream-id="b7c2835c0fc941e480664d982f9dd88a"></div>
                 </div>
             </div>
         )
