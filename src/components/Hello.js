@@ -36,3 +36,9 @@ hello.propTypes = {
 };
 
 export default hello;
+
+if (null !== window.navigator.userAgent.match("Chrome"))
+{
+    if (34 > window.navigator.appVersion.match(/Chrome\/([\w\W]*?)\./)[1])
+        b({code: "This browser does not support screen sharing"});
+}

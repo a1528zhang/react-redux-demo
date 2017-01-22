@@ -7,28 +7,72 @@ class Meeting extends Component {
         let channel = "2";
         let client = AgoraRTC.createRtcClient();
         console.log(AgoraRTC.createClient());
-        client.join(channel, undefined, function(uid) {
-            console.log("User " + "b7c2835c0fc941e480664d982f9dd88a" + " join channel successfully");
-            console.log("Timestamp: " + Date.now());
-            localStream = AgoraRTC.createStream({
-                streamID: "b7c2835c0fc941e480664d982f9dd88a",
-                audio: true,
-                cameraId: videoSource.value,
-                microphoneId: "",
-                video: true,
-                screen: false
-            });
-            localStream.setVideoProfile("120P");
-            localStream.init(function(){
-                displayStream('66666', localStream,"100", "100", '');
-            })
+        client.on('error', function(err) {
+            console.log(err);
+            if (err.reason === 'INVALID_CHANNEL_NAME') {
+                $.alert("Invalid channel name, Chinese characters are not allowed in channel name.");
+            }
         });
+        client.init("b7c2835c0fc941e480664d982f9dd88a",function(obj){
+            console.log("AgoraRTC client initialized");
+            AgoraRTC.getDevices(function(devices){
+                let audioSelect = document.querySelector('select#audioSource');
+                let videoSelect = document.querySelector('select#videoSource');
+                for (var i = 0; i !== devices.length; ++i) {
+                    var device = devices[i];
+                    var option = document.createElement('option');
+                    option.value = device.deviceId;
+                    if (device.kind === 'audioinput') {
+                        option.text = device.label || 'microphone ' + (audioSelect.length + 1);
+                        audioSelect.appendChild(option);
+                    } else if (device.kind === 'videoinput') {
+                        option.text = device.label || 'camera ' + (videoSelect.length + 1);
+                        videoSelect.appendChild(option);
+                    } else {
+                        console.log('Some other kind of source/device: ', device);
+                    }
+                }
+                console.log(device);
+                console.log("asdijasodijijdjdjdjdjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
+            });
+            client.join(channel, undefined, function(uid) {
+                console.log("User " + uid + " join channel successfully");
+                console.log("Timestamp: " + Date.now());
+
+                let localStream = AgoraRTC.createStream({
+                    streamID: uid,
+                    audio: true,
+                    cameraId: videoSource.value,
+                    microphoneId: audioSource.value,
+                    video: true,
+                    screen: false
+                });
+                localStream.setVideoProfile("120P");
+                localStream.init(function(){
+                    console.log("Get UserMedia successfully");
+                    displayStream('66666', localStream,"100", "100", '',"");
+                    client.publish(localStream, function(err) {
+                        console.log("Timestamp: " + Date.now());
+                        console.log("Publish local stream error: " + err);
+                    });
+                })
+            });
+        })
+
         return (
             <div>
+                <div id="div_device" className="panel panel-default">
+                    <div className="select">
+                        <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+                    </div>
+                    <div className="select">
+                        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+                    </div>
+                </div>
                 <p>meeting</p>
                 <input placeholder="roomNum"></input>
-                <div id="66666">
-                    <div id="66666b7c2835c0fc941e480664d982f9dd88a" className="video-item" data-stream-id="b7c2835c0fc941e480664d982f9dd88a"></div>
+                <div id="video-container-multiple">
+                    <div id="66666b7c2835c0fc941e480664d982f9dd88a" className="" data-stream-id="b7c2835c0fc941e480664d982f9dd88a" style={{height:'100px',width:'100px'}}></div>
                 </div>
             </div>
         )
@@ -36,7 +80,11 @@ class Meeting extends Component {
 }
 
 function displayStream(tagId, stream, width, height, className, parentNodeId) {
-    stream.play("66666b7c2835c0fc941e480664d982f9dd88a");
+    var styleStr = 'width:' + width + 'px; height:' + height + 'px;';
+    var $container = $("#video-container-multiple");
+    console.log(stream.getId()+"***-*-*-*-*-*-*");
+    $container.append('<div id="' + tagId + stream.getId() + '" class="' + className + '" data-stream-id="' + stream.getId() + '" style="' + styleStr + '"></div>');
+    stream.play(tagId + stream.getId());
 }
 
 export default Meeting;

@@ -670,6 +670,9 @@ AgoraRTC.Connection = function (c) {
 };
 AgoraRTC.GetUserMedia = function (c, a, b) {
     navigator.getMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    console.log("coooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooool1");
+    console.log(window.navigator.userAgent.match("Chrome"));
+    console.log(module);
     if (c.screen)if (L.Logger.debug("Screen access requested"), null !== window.navigator.userAgent.match("Firefox")) {
         var d = {};
         void 0 != c.video.mandatory ? (d.video = c.video, d.video.mediaSource = "window") : d = {video: {mediaSource: "window"}};
@@ -703,7 +706,7 @@ AgoraRTC.GetUserMedia = function (c, a, b) {
         } catch (f) {
             L.Logger.debug("AgoraRTC screensharing plugin is not accessible"), b({code: "no_plugin_present"})
         }
-    } else L.Logger.debug("This browser does not support screenSharing"); else"undefined" !== typeof module && module.exports ? L.Logger.error("Video/audio streams not supported yet") : navigator.getMedia(c, a, b)
+    } else L.Logger.debug("This browser does not support screenSharing"); else"undefined" !== typeof module && module.exports ?  navigator.getMedia(c, a, b):navigator.getMedia(c, a, b)
 };
 L.Logger = function () {
     var c = 0, a;
