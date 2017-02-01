@@ -4,7 +4,7 @@ import AgoraRTC from './AgoraRTCSDK-1.8.0'
 
 class Meeting extends Component {
     render() {
-        let channel = "2";
+        let channel = "123";
         let client = AgoraRTC.createRtcClient();
         console.log(AgoraRTC.createClient());
         client.on('error', function(err) {
@@ -25,15 +25,16 @@ class Meeting extends Component {
                     if (device.kind === 'audioinput') {
                         option.text = device.label || 'microphone ' + (audioSelect.length + 1);
                         audioSelect.appendChild(option);
+                        console.log('audioinput is: ', device);
                     } else if (device.kind === 'videoinput') {
                         option.text = device.label || 'camera ' + (videoSelect.length + 1);
                         videoSelect.appendChild(option);
+                        console.log('videoinput is: ', device);
                     } else {
                         console.log('Some other kind of source/device: ', device);
                     }
                 }
                 console.log(device);
-                console.log("asdijasodijijdjdjdjdjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
             });
             client.join(channel, undefined, function(uid) {
                 console.log("User " + uid + " join channel successfully");
@@ -47,6 +48,8 @@ class Meeting extends Component {
                     video: true,
                     screen: false
                 });
+                console.log(videoSource.value);
+                console.log(audioSource.value);
                 localStream.setVideoProfile("120P");
                 localStream.init(function(){
                     console.log("Get UserMedia successfully");
@@ -56,6 +59,18 @@ class Meeting extends Component {
                         console.log("Publish local stream error: " + err);
                     });
                 })
+            },function(obj){
+                console.log(obj);
+            });
+            client.on('stream-added', function (evt) {
+                let stream = evt.stream;
+                console.log("New stream added: " + stream.getId());
+                console.log("Timestamp: " + Date.now());
+                console.log("Subscribe ", stream);
+                client.subscribe(stream, function (err) {
+                    console.log("Subscribe stream failed", err);
+                });
+                stream.play("remoteView");
             });
         })
 
@@ -63,10 +78,10 @@ class Meeting extends Component {
             <div>
                 <div id="div_device" className="panel panel-default">
                     <div className="select">
-                        <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+                        <label htmlFor="audioSource">Audio source: </label><select id="audioSource"></select>
                     </div>
                     <div className="select">
-                        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+                        <label htmlFor="videoSource">Video source: </label><select id="videoSource"></select>
                     </div>
                 </div>
                 <p>meeting</p>
@@ -74,6 +89,7 @@ class Meeting extends Component {
                 <div id="video-container-multiple">
                     <div id="66666b7c2835c0fc941e480664d982f9dd88a" className="" data-stream-id="b7c2835c0fc941e480664d982f9dd88a" style={{height:'100px',width:'100px'}}></div>
                 </div>
+                <div id="remoteView" className="remote-view"></div>
             </div>
         )
     }
@@ -83,8 +99,8 @@ function displayStream(tagId, stream, width, height, className, parentNodeId) {
     var styleStr = 'width:' + width + 'px; height:' + height + 'px;';
     var $container = $("#video-container-multiple");
     console.log(stream.getId()+"***-*-*-*-*-*-*");
-    $container.append('<div id="' + tagId + stream.getId() + '" class="' + className + '" data-stream-id="' + stream.getId() + '" style="' + styleStr + '"></div>');
-    stream.play(tagId + stream.getId());
+    $container.append('<div id="gogogo" class="' + className + '" data-stream-id="' + stream.getId() + '" style="' + styleStr + '"></div>');
+    stream.play("gogogo");
 }
 
 export default Meeting;

@@ -18,6 +18,8 @@ AgoraRTC.EventDispatcher = function (c) {
     c.dispatcher = {};
     c.dispatcher.eventListeners = {};
     a.addEventListener = function (a, d) {
+        console.log("6666666666666666666666666666666666");
+        console.log(a);
         void 0 === c.dispatcher.eventListeners[a] && (c.dispatcher.eventListeners[a] = []);
         c.dispatcher.eventListeners[a].push(d)
     };
@@ -664,7 +666,7 @@ AgoraRTC.sessionId = 103;
 AgoraRTC.Connection = function (c) {
     var a = {};
     c.session_id = AgoraRTC.sessionId += 1;
-    if ("undefined" !== typeof module && module.exports)L.Logger.error("Publish/subscribe video/audio streams not supported yet"), a = AgoraRTC.FcStack(c); else if (null !== window.navigator.userAgent.match("Firefox"))a.browser = "mozilla", a = AgoraRTC.FirefoxStack(c); else if (window.navigator.userAgent.indexOf("Safari"))L.Logger.debug("Safari"), a = AgoraRTC.ChromeStableStack(c), a.browser = "safari"; else if (window.navigator.userAgent.indexOf("MSIE "))L.Logger.debug("IE"), a =
+    if (null !== window.navigator.userAgent.match("Firefox"))a.browser = "mozilla", a = AgoraRTC.FirefoxStack(c); else if (window.navigator.userAgent.indexOf("Safari"))L.Logger.debug("Safari"), a = AgoraRTC.ChromeStableStack(c), a.browser = "safari"; else if (window.navigator.userAgent.indexOf("MSIE "))L.Logger.debug("IE"), a =
         AgoraRTC.ChromeStableStack(c), a.browser = "ie"; else if (26 <= window.navigator.appVersion.match(/Chrome\/([\w\W]*?)\./)[1])L.Logger.debug("Stable"), a = AgoraRTC.ChromeStableStack(c), a.browser = "chrome-stable"; else if (40 <= window.navigator.userAgent.toLowerCase().indexOf("chrome"))L.Logger.debug("Canary!"), a = AgoraRTC.ChromeCanaryStack(c), a.browser = "chrome-canary"; else throw a.browser = "none", "WebRTC stack not available";
     return a
 };
