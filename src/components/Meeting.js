@@ -72,6 +72,16 @@ class Meeting extends Component {
                 });
                 stream.play("remoteView");
             });
+            client.on('stream-subscribed', function (evt) {
+                let stream = evt.stream;
+                console.log("New stream added: " + stream.getId());
+                console.log("Timestamp: " + Date.now());
+                console.log("Subscribe ", stream);
+                client.subscribe(stream, function (err) {
+                    console.log("Subscribe stream failed", err);
+                });
+                stream.play("remoteView");
+            });
         })
 
         return (
@@ -89,7 +99,7 @@ class Meeting extends Component {
                 <div id="video-container-multiple">
                     <div id="66666b7c2835c0fc941e480664d982f9dd88a" className="" data-stream-id="b7c2835c0fc941e480664d982f9dd88a" style={{height:'100px',width:'100px'}}></div>
                 </div>
-                <div id="remoteView" className="remote-view"></div>
+                <div id="remoteView" className="remote-view" style={{height:'100px',width:'100px'}}></div>
             </div>
         )
     }
